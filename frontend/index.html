@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Authentification</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href="style.css">
+</head>
+<body>
+    <center>
+    <div class="container" id="container">
+        <div class="sign-up">
+            <form action="#" id="signup">
+                <h1>Create an account</h1>
+                <input type="text" id="Name" name="Name" placeholder="Name" required/>
+                <input type="email" id="email" name="email" placeholder="Email" required/>
+                <input type="password" id="password" name="password" placeholder="Password" required/>
+                <div class="strength-bar">
+                    <div class="strength-bar-fill" id="strength-fill"></div>
+                </div>
+        <p class="strength-text" id="strength-text">Password strength</p>
+                <div>
+                    <label>
+                        <input type="radio" name="userType" value="student" checked>
+                        Student
+                    </label>
+                    <label>
+                        <input type="radio" name="userType" value="professor">
+                        Professor
+                    </label>
+                </div>
+                <button style="margin-top: 10px;" type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="sign-in">
+            <h1>Sign in</h1>
+            <form action="#" id="signin">
+                <input type ="email" id="signin-email" placeholder="Email"/>
+                <input type="password" id="signin-password" placeholder="Password"/>
+                <button style="margin-top: 10px;" type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay">
+            <div class="overlay-left">
+                <h1 class="white-txt">Welcome back!</h1>
+                <button>Sign In</button>
+            </div>
+            <div class="overlay-right">
+                <h1>Hello , friend !</h1>
+                <button>Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/backend/auth.js"></script>
+    <script src="script.js"></script>
+    </center>
+</body>
+</html>
