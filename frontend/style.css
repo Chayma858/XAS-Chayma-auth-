@@ -1,0 +1,205 @@
+.strength-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.strength-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.weak {
+    background-color: #ff4444;
+    width: 50%;
+}
+
+.strong {
+    background-color: #00cc66;
+    width: 100%;
+}
+
+.strength-text {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.container {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    overflow: hidden;
+    
+}
+
+.sign-in {
+    left: 0;
+    z-index: 2;
+    display: flex;
+     flex-direction: column;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-up {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+     flex-direction: column;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: all 0.8s ease-in-out;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sign-up h1,.sign-in h1{color: #333333;
+   
+    font-size: 50px;
+    margin-bottom: 80px; /*pour l'espacement sous le titree*/
+    text-align: center;
+    font-weight: 900px; /*(extra-bold)*/
+}
+.sign-up form, .sign-in form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.sign-up input,.sign-in input{
+    border:none;
+    border-bottom:2px solid #e0e0e0;
+    
+}
+.sign-up button,.sign-in button{
+    border-radius:25px ;/*permettrede controler l'arrondi des coins*/
+    padding: 10px 16px;
+    color:white;
+    justify-content: center;
+    font-size:25px;
+    font-weight:700;/*bold*/
+    width:190px;
+    display:flex;
+    margin-left:auto;
+    margin-right:auto;
+    border:2px solid white;
+    box-shadow:0 0 0 1px #3498db;
+    background-color:blue;
+    transition: all 0.3s;
+
+    position:relative;
+    top:60px;
+ 
+ }
+.sign-up button {
+    position: relative;
+    top:-50px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color:blue;
+    background-image: radial-gradient(
+        circle at bottom,
+        rgba(255, 255, 255, 0.7) 0%,    /* Blanc au centre */
+        rgba(255, 255, 255, 0.3) 30%,   /* Blend progressif */
+        transparent 60%                 /* Fusion avec le bleu */
+    );
+
+    transition: transform 0.8s ease-in-out;
+    z-index: 100;
+}
+
+.overlay button{
+    border-radius:25px ;/*permettrede controler l'arrondi des coins*/
+    padding: 10px 16px;
+    color:white;
+    font-size:25px;
+    font-weight:700;/*bold*/
+    width:190px;
+    margin-left:auto;
+    margin-right:auto;
+    border:3px solid #c0d8e9;
+    background-color:blue;
+    background-image: radial-gradient(
+        circle at bottom,
+        rgba(255, 255, 255, 0.7) 0%,    /* Blanc au centre */
+        rgba(255, 255, 255, 0.3) 50%,   /* Blend progressif */
+        transparent 90%                 /* Fusion avec le bleu */
+    );
+    background-blend-mode: overlay;
+
+    position:relative;
+    top:0px;
+
+}
+
+.overlay-left, .overlay-right {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
+    color: white;
+    top:0;
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.overlay-left {
+    right:0;
+    transform: translateX(0);
+    opacity:0;
+    pointer-events:none;
+}
+
+
+.container.active .sign-in {
+    transform: translateX(100%);
+     opacity: 0;
+    pointer-events: none;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+  
+}
+.container.active .overlay {
+    transform: translateX(-100%);
+}
+
+.container.active .overlay-left {
+    transform: translateX(0);
+    opacity:1;
+    pointer-events: auto;
+}
+
+.container.active .overlay-right {
+    transform: translateX(0);
+    opacity:0;
+    pointer-events: none;
+}
